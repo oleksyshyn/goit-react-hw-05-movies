@@ -1,0 +1,16 @@
+.castList {
+    margin-left: 30px;
+}
+
+.image {
+    height: 150px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.character {
+    font-weight: 400;
+    margin-bottom: 30px;
+}

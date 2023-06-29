@@ -1,0 +1,47 @@
+.button {
+    height: 30px;
+    width: 140px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.goBack {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.movieDetails {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.movieInfo {
+    margin-left: 20px;
+}
+
+.image {
+    height: 300px;
+}
+
+.genresList {
+    display: flex;
+    list-style: none;
+}
+
+.genre {
+    margin-right: 10px;
+}
+
+.addInfo {
+    border-bottom: 1px solid black;
+}
+
+.addInfoList {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.cast, .reviews {
+    color: blue;
+}
