@@ -1,4 +1,4 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SearchMovie from "components/SearchMovie/SearchMovie";
 import MoviesList from "components/MoviesList/MoviesList";
 import { getSearchMovie } from "api/theMovieApi";
