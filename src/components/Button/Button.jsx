@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import css from './Button.module.css';
+import PropTypes from 'prop-types';
 
 function Button ({location}) {
     const navigate = useNavigate();
@@ -8,3 +9,7 @@ function Button ({location}) {
 }
 
 export default Button;
+
+Button.propTypes = {
+    location: PropTypes.shape(PropTypes.any.isRequired).isRequired,
+};

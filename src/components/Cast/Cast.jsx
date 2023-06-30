@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieCast } from "api/theMovieApi";
 import css from './Cast.module.css';
+import PropTypes from 'prop-types';
 
 function Cast() {
     const [cast, setCast] = useState([]);
@@ -44,3 +45,14 @@ function Cast() {
 }
 
 export default Cast;
+
+Cast.propTypes = {
+    cast: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            character: PropTypes.string.isRequired,
+            profile_path: PropTypes.string.isRequired,
+        })
+    ),
+};

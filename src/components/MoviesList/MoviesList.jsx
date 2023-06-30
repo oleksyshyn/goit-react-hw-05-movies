@@ -1,5 +1,6 @@
 import MoviesListItem from 'components/MoviesListItem/MoviesListItem';
 import css from './MoviesList.module.css';
+import PropTypes from 'prop-types';
 
 function MoviesList({ movies }) {
     
@@ -17,3 +18,12 @@ function MoviesList({ movies }) {
 }
 
 export default MoviesList;
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+};

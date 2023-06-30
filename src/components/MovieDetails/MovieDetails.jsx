@@ -1,8 +1,9 @@
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { getMovieDetails } from "api/theMovieApi";
 import Button from "components/Button/Button";
 import css from './MovieDetails.module.css';
+import PropTypes from 'prop-types';
 
 function MovieDetails() {
     const { movieId } = useParams();
@@ -56,8 +57,25 @@ function MovieDetails() {
                 </li>
             </ul>
         </div>
-        <Outlet/>
+        <Suspense fallback={<div>Loading...</div>}>
+            <Outlet/>
+        </Suspense>
     </>
 }
 
 export default MovieDetails;
+
+MovieDetails.propTypes = {
+    movie: PropTypes.shape({
+        poster_path: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        vote_average: PropTypes.number.isRequired,
+        overview: PropTypes.string.isRequired,
+        genres: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number.isRequired,
+                name: PropTypes.string.isRequired,
+            })
+        ),
+    })
+};

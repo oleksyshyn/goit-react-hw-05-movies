@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import css from './SearchMovie.module.css';
+import PropTypes from 'prop-types';
 
 function SearchMovie({ onSubmit }) {
     const [query, setQuery] = useState('');
@@ -26,3 +27,7 @@ function SearchMovie({ onSubmit }) {
 }
 
 export default SearchMovie;
+
+SearchMovie.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+};

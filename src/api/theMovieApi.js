@@ -11,8 +11,8 @@ const params = {
 };
 
 export const getTrendingMovies = async () => {
-    const { data } = await axios.get('/trending/movie/day', params);
-    return data.results;
+  const { data } = await axios.get('/trending/movie/day', params);
+  return data.results;
 }
 
 export const getMovieDetails = async movieId => {

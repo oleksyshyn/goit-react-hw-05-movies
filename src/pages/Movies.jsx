@@ -9,17 +9,6 @@ function Movies() {
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get("query");
 
-    // const formSubmitHandler = (query) => {
-    //     setSearchParams({ query: query });
-        
-    //     async function loadSearchMovie() {
-    //         const searchMovies = await getSearchMovie(query);
-    //         setMovies(searchMovies);
-    //     }
-
-    //     loadSearchMovie();
-    // }
-
     const formSubmitHandler = useCallback(
         async query => {
             const searchMovies = await getSearchMovie(query);
@@ -30,7 +19,6 @@ function Movies() {
     );
         
     useEffect(() => {
-        
         if (query) {
             formSubmitHandler(query);
         }
