@@ -26,7 +26,7 @@ function Movies() {
             setMovies(searchMovies);
             setSearchParams({ query: query });
         },
-        [searchParams]
+        [setSearchParams]
     );
         
     useEffect(() => {
