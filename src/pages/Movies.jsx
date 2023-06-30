@@ -25,7 +25,7 @@ function Movies() {
         if (query) {
             formSubmitHandler(query);
         }
-    }, [searchParams]);
+    }, [searchParams, query]);
 
     return (
         <div>
