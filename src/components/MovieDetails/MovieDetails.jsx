@@ -1,11 +1,15 @@
-import { useParams, Link, Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import { getMovieDetails } from "api/theMovieApi";
+import Button from "components/Button/Button";
 import css from './MovieDetails.module.css';
 
 function MovieDetails() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
+
+    const location = useLocation();
+    const locationRef = useRef(location);
 
     useEffect(() => {
 
@@ -21,10 +25,7 @@ function MovieDetails() {
         return <>Loading...</>
     }
     return <>
-        
-        <button className={css.button}>
-            <Link to="/" className={css.goBack}>Go back</Link>
-        </button>
+        <Button location={locationRef.current} />
         <div className={css.movieDetails}>
             <img
                 src={ movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ""}

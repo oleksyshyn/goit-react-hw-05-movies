@@ -22,7 +22,6 @@ function SearchMovie({ onSubmit }) {
             <input className={css.input} value={query} onChange={handleInputChange}></input>
             <button type="submit" className={css.searchBtn}>Search</button>
         </form>
-        
     );
 }
 

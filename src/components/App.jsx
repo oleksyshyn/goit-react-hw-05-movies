@@ -5,6 +5,7 @@ import Movies from '../pages/Movies';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+import NotFound from 'pages/NotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={ <NotFound />} />
       </Routes>
     </div>
   );
